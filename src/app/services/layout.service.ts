@@ -69,7 +69,6 @@ export class LayoutService {
   }
 
   onMenuToggle(): void {
-    console.log(this.config().menuMode);
     if (this.isOverlay()) {
       this.state.overlayMenuActive = !this.state.overlayMenuActive;
       if (this.state.overlayMenuActive) {
@@ -77,8 +76,7 @@ export class LayoutService {
       }
     }
     if (this.isDesktop()) {
-      this.state.staticMenuDesktopInactive =
-        !this.state.staticMenuDesktopInactive;
+      this.state.staticMenuDesktopInactive = !this.state.staticMenuDesktopInactive;
     } else {
       this.state.staticMenuMobileActive =
         !this.state.staticMenuMobileActive;
