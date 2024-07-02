@@ -1,17 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-
+import { TranslateService } from '@ngx-translate/core';
+import { PrimeNGConfig } from 'primeng/api';
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet],
+  providers: [TranslateService],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'base';
-  constructor() {
-    let r = {
+  constructor(
+    private config: PrimeNGConfig,
+    private translateService: TranslateService
+  ) {
+    /*let r = {
       uno: 'u',
       dos: 'tipo',
       tres: {
@@ -25,6 +30,18 @@ export class AppComponent {
 
       console.log(key);
       console.log();
-    }
+    }*/
+  }
+  ngOnInit() {
+    this.translateService.setDefaultLang('es');
+    this.config.overlayOptions = {
+      mode: 'modal',
+    };
+  }
+  translate(lang: string): void {
+    this.translateService.use(lang);
+    this.translateService
+      .get('primeng')
+      .subscribe((res) => this.config.setTranslation(res));
   }
 }
