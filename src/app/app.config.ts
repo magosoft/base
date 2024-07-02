@@ -1,5 +1,9 @@
 import { ApplicationConfig, importProvidersFrom } from '@angular/core';
-import { provideRouter } from '@angular/router';
+import {
+  provideRouter,
+  withInMemoryScrolling,
+  withRouterConfig,
+} from '@angular/router';
 
 import { routes } from './app.routes';
 import {
@@ -14,7 +18,16 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
 }
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideRouter(routes),
+    provideRouter(
+      routes,
+      withRouterConfig({
+        onSameUrlNavigation: 'reload',
+      }),
+      withInMemoryScrolling({
+        scrollPositionRestoration: 'enabled',
+        anchorScrolling: 'enabled',
+      })
+    ),
     provideHttpClient(),
     importProvidersFrom(HttpClientModule),
     importProvidersFrom(
