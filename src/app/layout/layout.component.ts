@@ -39,13 +39,18 @@ export class LayoutComponent implements OnDestroy {
             'document',
             'click',
             (event: any) => {
+              console.log(event.target);
               const isOutsideClicked = !(this.appSidebar.el.nativeElement.isSameNode(event.target)
                 || this.appSidebar.el.nativeElement.contains(event.target)
                 || this.appTopbar.menuButton.nativeElement.isSameNode(event.target)
                 || this.appTopbar.menuButton.nativeElement.contains(event.target));
-              if (isOutsideClicked) {
+                console.log(this.appSidebar.el.nativeElement.isSameNode(event.target));
+                console.log( this.appSidebar.el.nativeElement.contains(event.target));
+                console.log(this.appTopbar.menuButton.nativeElement.isSameNode(event.target));
+                console.log(this.appTopbar.menuButton.nativeElement.contains(event.target));
+              //if (isOutsideClicked) {
                 this.hideMenu();
-              }
+             // }
             }
           );
         }
@@ -112,6 +117,7 @@ export class LayoutComponent implements OnDestroy {
     this.layoutService.state.staticMenuMobileActive = false;
     this.layoutService.state.menuHoverActive = false;
     if (this.menuOutsideClickListener) {
+      console.log('test');
       this.menuOutsideClickListener();
       this.menuOutsideClickListener = null;
     }
