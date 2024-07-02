@@ -4,6 +4,7 @@ import {
   withInMemoryScrolling,
   withRouterConfig,
 } from '@angular/router';
+import { BrowserAnimationsModule, provideAnimations } from '@angular/platform-browser/animations';
 
 import { routes } from './app.routes';
 import {
@@ -28,6 +29,7 @@ export const appConfig: ApplicationConfig = {
         anchorScrolling: 'enabled',
       })
     ),
+    importProvidersFrom([BrowserAnimationsModule]),
     provideHttpClient(),
     importProvidersFrom(HttpClientModule),
     importProvidersFrom(
