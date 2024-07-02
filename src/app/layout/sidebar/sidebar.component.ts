@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit } from '@angular/core';
 import { MenuitemComponent } from '../menuitem/menuitem.component';
 
 @Component({
@@ -9,6 +9,10 @@ import { MenuitemComponent } from '../menuitem/menuitem.component';
   styleUrl: './sidebar.component.scss'
 })
 export class SidebarComponent implements OnInit{
+
+   constructor(public el: ElementRef){
+
+   } 
   
   items: any[] = [];
   ngOnInit(): void {

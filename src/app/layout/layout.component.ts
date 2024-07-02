@@ -1,4 +1,4 @@
-import { Component, OnDestroy, Renderer2 } from '@angular/core';
+import { Component, OnDestroy, Renderer2, ViewChild } from '@angular/core';
 import { Subscription, filter } from 'rxjs';
 import { LayoutService } from '../services/layout.service';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
@@ -24,6 +24,9 @@ export class LayoutComponent implements OnDestroy {
   public overlayMenuOpenSubscription: Subscription;
   public menuOutsideClickListener: any;
   public profileMenuOutsideClickListener: any;
+
+  @ViewChild(SidebarComponent) appSidebar!: SidebarComponent;
+  @ViewChild(TopbarComponent) appTopbar!: TopbarComponent;
   constructor(
     public layoutService: LayoutService,
     public renderer: Renderer2,
@@ -36,7 +39,10 @@ export class LayoutComponent implements OnDestroy {
             'document',
             'click',
             (event: any) => {
-              const isOutsideClicked = true;
+              const isOutsideClicked = !(this.appSidebar.el.nativeElement.isSameNode(event.target)
+                || this.appSidebar.el.nativeElement.contains(event.target)
+                || this.appTopbar.menuButton.nativeElement.isSameNode(event.target)
+                || this.appTopbar.menuButton.nativeElement.contains(event.target));
               if (isOutsideClicked) {
                 this.hideMenu();
               }
@@ -48,7 +54,10 @@ export class LayoutComponent implements OnDestroy {
             'document',
             'click',
             (event: any) => {
-              const isOutsideClicked = true;
+              const isOutsideClicked = !(this.appTopbar.menu.nativeElement.isSameNode(event.target)
+                || this.appTopbar.menu.nativeElement.contains(event.target)
+                || this.appTopbar.topbarMenuButton.nativeElement.isSameNode(event.target)
+                || this.appTopbar.topbarMenuButton.nativeElement.contains(event.target));
               if (isOutsideClicked) {
                 this.hideProfileMenu();
               }
