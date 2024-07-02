@@ -1,12 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { TranslateService } from '@ngx-translate/core';
+import {
+  TranslateModule,
+  TranslatePipe,
+  TranslateService,
+} from '@ngx-translate/core';
 import { PrimeNGConfig } from 'primeng/api';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
-  providers: [TranslateService],
+  imports: [RouterOutlet, TranslateModule],
+  providers: [TranslateService, TranslatePipe],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
