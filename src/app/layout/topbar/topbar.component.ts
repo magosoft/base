@@ -23,7 +23,7 @@ export class TopbarComponent {
     private config: PrimeNGConfig,
     private translateService: TranslateService
   ) {
-    this.countries = [{ code: 'us' }, { code: 'es' }, { code: 'br' }];
+    this.countries = [{ code: 'es' }, { code: 'us' }, { code: 'br' }];
     this.selectedCountry = this.countries[0];
   }
   translate(lang: string): void {
