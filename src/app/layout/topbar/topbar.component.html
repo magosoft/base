@@ -17,6 +17,27 @@
       'layout-topbar-menu-mobile-active':
         layoutService.state.profileSidebarVisible
     }">
+
+    <p-dropdown [options]="countries"   [(ngModel)]="selectedCountry" (onChange)="translate(selectedCountry.code)">
+      <ng-template pTemplate="selectedItem">
+        @if(selectedCountry){
+          <div class="flex align-items-center gap-2">
+            <img
+                src="https://primefaces.org/cdn/primeng/images/demo/flag/flag_placeholder.png"
+                [class]="'flag flag-' + selectedCountry.code.toLowerCase()"
+                style="width: 18px" />
+        </div>
+        }
+    </ng-template>
+      <ng-template let-country pTemplate="item" >
+        <div class="flex align-items-center gap-2" >
+            <img
+                src="assets/images/flag/flag_placeholder.png"
+                [class]="'flag flag-' + country.code.toLowerCase()"
+                style="width: 18px" />
+        </div>
+    </ng-template>
+    </p-dropdown>
     <button class="p-link layout-topbar-button">
       <i class="pi pi-calendar"></i>
       <span>Calendar</span>

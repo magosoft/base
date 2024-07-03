@@ -1,4 +1,9 @@
 /* General */
-$scale:14px;                    /* main font size */ 
-$borderRadius:12px;             /* border radius of layout element e.g. card, sidebar */ 
-$transitionDuration:.2s;        /* transition duration of layout elements e.g. sidebar, overlay menus */ 
+$scale: 14px; /* main font size */
+$borderRadius: 12px; /* border radius of layout element e.g. card, sidebar */
+$transitionDuration: 0.2s; /* transition duration of layout elements e.g. sidebar, overlay menus */
+$shadeBody: rgb(241,245,249);
+:root {
+  --surface-ground-body: #{$shadeBody};
+  /*--surface-ground-body: #f9fafb;*/
+}

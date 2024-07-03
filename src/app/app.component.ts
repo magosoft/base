@@ -42,10 +42,5 @@ export class AppComponent implements OnInit {
       mode: 'modal',
     };
   }
-  translate(lang: string): void {
-    this.translateService.use(lang);
-    this.translateService
-      .get('primeng')
-      .subscribe((res) => this.config.setTranslation(res));
-  }
+
 }
