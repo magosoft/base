@@ -84,7 +84,9 @@ export class LayoutService {
       }
     }
   }
+  translate(str: string): void {
 
+  }
   isDesktop() {
     return window.innerWidth > 991;
   }

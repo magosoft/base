@@ -128,5 +128,10 @@
          "zoomOut": "Zoom Out"
          
       }
-   }
+   },
+   "login": {
+    "welcome": "Welcome",
+    "email": "E-mail",
+    "send":"Sign out"
+  }
 }

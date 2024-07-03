@@ -1,5 +1,7 @@
 import { Routes } from '@angular/router';
 import { LayoutComponent } from './layout/layout.component';
+import { NotfoundComponent } from './pages/notfound/notfound.component';
+import { LoginComponent } from './pages/login/login.component';
 
 export const routes: Routes = [
   {
@@ -14,8 +16,9 @@ export const routes: Routes = [
     ]
   },
   /*{ path: 'auth', loadChildren: () => import('./demo/components/auth/auth.module').then(m => m.AuthModule) },
-  { path: 'landing', loadChildren: () => import('./demo/components/landing/landing.module').then(m => m.LandingModule) },
-  { path: 'notfound', component: NotfoundComponent },*/
+  { path: 'landing', loadChildren: () => import('./demo/components/landing/landing.module').then(m => m.LandingModule) },*/
+  { path: 'login', component: LoginComponent },
+  { path: 'notfound', component: NotfoundComponent },
   { path: '**', redirectTo: '/notfound' },
 
 ];

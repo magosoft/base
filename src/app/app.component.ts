@@ -20,6 +20,8 @@ export class AppComponent implements OnInit {
     private config: PrimeNGConfig,
     private translateService: TranslateService
   ) {
+    this.translateService.addLangs(['en', 'es','pt-br']);
+    this.translateService.setDefaultLang('es');
     /*let r = {
       uno: 'u',
       dos: 'tipo',
@@ -36,11 +38,12 @@ export class AppComponent implements OnInit {
       console.log();
     }*/
   }
-  ngOnInit() {
-    this.translateService.setDefaultLang('es');
-    this.config.overlayOptions = {
+  ngOnInit() {    
+    const browserLang = this.translateService.getBrowserLang();
+    this.translateService.use(browserLang?.match(/en|es|pt-br/) ? browserLang : 'es');  
+    /*this.config.overlayOptions = {
       mode: 'modal',
-    };
+    };*/
   }
 
 }

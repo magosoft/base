@@ -188,5 +188,13 @@
       "zoomOut": "Reducir"
     }
   },
-  "home":{"palabra":"Palabra"}
+  "notfound": {
+    "notFound": "No encontrado.",
+    "notAvailable": "El recurso solicitado no está disponible."
+  },
+  "login": {
+    "welcome": "Bienvenido al sistema",
+    "email": "Correo electrónico",
+    "send":"Iniciar sesión"
+  }
 }

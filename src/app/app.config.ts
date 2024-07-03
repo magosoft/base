@@ -1,17 +1,8 @@
 import { ApplicationConfig, importProvidersFrom } from '@angular/core';
-import {
-  provideRouter,
-  withInMemoryScrolling,
-  withRouterConfig,
-} from '@angular/router';
-import { BrowserAnimationsModule, provideAnimations } from '@angular/platform-browser/animations';
-
+import { provideRouter, withInMemoryScrolling, withRouterConfig } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { routes } from './app.routes';
-import {
-  HttpClient,
-  HttpClientModule,
-  provideHttpClient,
-} from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 export function HttpLoaderFactory(httpClient: HttpClient) {
@@ -30,7 +21,6 @@ export const appConfig: ApplicationConfig = {
       })
     ),
     importProvidersFrom([BrowserAnimationsModule]),
-    provideHttpClient(),
     importProvidersFrom(HttpClientModule),
     importProvidersFrom(
       TranslateModule.forRoot({
