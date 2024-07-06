@@ -10,7 +10,7 @@ Ejecutar el comando `ng serve` para un servidor local de desarrollo. Navegar a `
 
 Ejecutar el comando `ng generate component component-name` genera un nuevo componente. También puedes usar `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Compilar
+## Compilación
 
 Ejecutar el comando `ng build` para compilar el proyecto. Los artefactos compilados estaran ubicados en la carpeta `dist/`.
 
