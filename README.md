@@ -22,6 +22,6 @@ Ejecutar el comando `ng test` para realizar las pruebas unitarias por [Karma](ht
 
 Ejecutar el comando `ng e2e` para iniciar las pruebas end-to-end a través de una plataforma de su elección. Para usar este comando, primero debe agregar un paquete que implemente capacidades de prueba end-to-end.
 
-## Further help
+## Ayuda sobre angular
 
 Para obtener más ayuda sobre Angular CLI, use `ng help` o consulte la página [Angular CLI Overview and Command Reference](https://angular.io/cli).
